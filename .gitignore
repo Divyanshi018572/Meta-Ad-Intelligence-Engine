@@ -21,9 +21,6 @@ env/
 
 # ── Large Data Files (too big for GitHub) ────────────────────────────────────
 
-data/processed/merged_ad_data.csv
-data/processed/final_merged_data.csv
-
 *.xlsb
 *.zip
 
