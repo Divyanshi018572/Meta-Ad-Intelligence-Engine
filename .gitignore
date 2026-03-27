@@ -20,8 +20,7 @@ env/
 *.ipynb_checkpoints
 
 # ── Large Data Files (too big for GitHub) ────────────────────────────────────
-data/raw/ad_events.csv
-data/raw/users.csv
+
 data/processed/merged_ad_data.csv
 data/processed/final_merged_data.csv
 data/processed/df.csv
