@@ -23,7 +23,7 @@ env/
 
 data/processed/merged_ad_data.csv
 data/processed/final_merged_data.csv
-data/processed/df.csv
+
 *.xlsb
 *.zip
 
