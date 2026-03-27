@@ -1,4 +1,4 @@
-# 📊 SocialAds360 — Meta Ad Intelligence Dashboard
+# 📊 Meta Ad Intelligence Engine
 
 
 > **An end-to-end Meta Ad analytics platform analyzing 400K+ ad events across Facebook & Instagram — with funnel analysis, ROAS/ROI tracking, A/B testing, ML-powered conversion prediction, and a live Streamlit dashboard.**
