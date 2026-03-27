@@ -68,8 +68,26 @@ plt.rcParams.update({
 COLORS = ['#3b82f6','#06b6d4','#8b5cf6','#10b981','#f59e0b','#ef4444','#f472b6','#34d399']
 
 # ── DATA LOADING ──────────────────────────────────────────────────────────────
+import os
+
+
 @st.cache_data
 def load_data():
+    import os
+
+    # Auto-download from Kaggle if files are missing (for Streamlit Cloud)
+    if not os.path.exists('data/raw/ad_events.csv'):
+        try:
+            import kaggle
+            kaggle.api.authenticate()
+            kaggle.api.dataset_download_files(
+                'alperenmyung/social-media-advertisement-performance',
+                path='data/raw/', unzip=True
+            )
+        except Exception as e:
+            st.error(f"Could not download data from Kaggle: {e}")
+            return None, None, None, None, None   # ← prevents unpack crash
+
     events    = pd.read_csv('data/raw/ad_events.csv')
     ads       = pd.read_csv('data/raw/ads.csv')
     campaigns = pd.read_csv('data/raw/campaigns.csv')
@@ -82,15 +100,12 @@ def load_data():
     df = df.merge(campaigns[['campaign_id','total_budget','duration_days']], on='campaign_id', how='left')
     df = df.merge(users[['user_id','user_gender','age_group','country']], on='user_id', how='left')
 
-    # Estimated cost per event (for ROAS calculation)
     df['estimated_cost'] = np.where(df['event_type'] == 'Click', 0.5,
                            np.where(df['event_type'] == 'Purchase', 2.0,
                            np.where(df['event_type'] == 'Impression', 0.002, 0.1)))
-    # Estimated revenue per purchase
     df['estimated_revenue'] = np.where(df['event_type'] == 'Purchase',
                                         np.random.uniform(20, 150, len(df)), 0)
-    return df, events, ads, campaigns, users
-
+    return df, events, ads, campaigns, users   # ← this line must be present
 @st.cache_resource
 def train_ml_models(df):
     """
@@ -172,7 +187,10 @@ def train_ml_models(df):
 
 # ── LOAD DATA ─────────────────────────────────────────────────────────────────
 with st.spinner("Loading data..."):
-    df, events, ads, campaigns, users = load_data()
+    result = load_data()
+    if any(x is None for x in result):
+        st.stop()
+    df, events, ads, campaigns, users = result
 
 # ── HELPER FUNCTIONS ──────────────────────────────────────────────────────────
 def compute_kpis(data):
