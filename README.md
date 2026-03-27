@@ -197,7 +197,7 @@ SocialAds-360-Dashboard/
 | Resource | URL |
 |----------|-----|
 | 📊 Dataset | [Kaggle](https://www.kaggle.com/datasets/alperenmyung/social-media-advertisement-performance) |
-| 🚀 Live App | [Streamlit](https://2eydel6rqdciyjzgjkcics.streamlit.app/) |
+| 🚀 Live App | [Streamlit](https://meta-ad-intelligence-engine-noknavfbsz7x9bjo7eh3ey.streamlit.app/) |
 | 💼 LinkedIn | [linkedin.com/in/divyanshi018572](https://www.linkedin.com/in/divyanshi018572) |
 | 🐙 GitHub | [github.com/Divyanshi018572](https://github.com/Divyanshi018572) |
 
