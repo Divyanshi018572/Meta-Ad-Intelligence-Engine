@@ -9,3 +9,4 @@ openpyxl
 fpdf2
 seaborn
 imbalanced-learn
+Kaagle
