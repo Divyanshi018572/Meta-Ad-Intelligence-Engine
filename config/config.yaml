@@ -1,0 +1,45 @@
+# ── Meta Ad Performance Analysis — Config File ───────────────────────────────
+# Change these paths if you move the project to a different location
+
+# ── Data Paths ────────────────────────────────────────────────────────────────
+data:
+  raw:
+    ad_events   : "data/raw/ad_events.csv"
+    ads         : "data/raw/ads.csv"
+    campaigns   : "data/raw/campaigns.csv"
+    users       : "data/raw/users.csv"
+  processed:
+    merged      : "data/processed/merged_ad_data.csv"
+    clustered   : "data/processed/ad_metrics_clustered.csv"
+
+# ── Output Paths ──────────────────────────────────────────────────────────────
+outputs:
+  plots   : "outputs/plots/"
+  reports : "outputs/reports/"
+
+# ── ML Model Settings ────────────────────────────────────────────────────────
+ml:
+  random_forest:
+    n_estimators  : 200
+    max_depth     : 8
+    class_weight  : "balanced"
+    random_state  : 42
+    test_size     : 0.2
+
+  kmeans:
+    n_clusters    : 5
+    random_state  : 42
+    n_init        : 10
+
+# ── Dashboard Settings ───────────────────────────────────────────────────────
+dashboard:
+  page_title    : "Meta Ad Performance"
+  page_icon     : "📊"
+  layout        : "wide"
+
+# ── Business Settings ────────────────────────────────────────────────────────
+business:
+  avg_order_value     : 85       # assumed average purchase value in $
+  target_roas         : 3.0      # industry benchmark
+  target_cpa          : 50.0     # max cost per acquisition in $
+  target_ctr          : 10.0     # minimum acceptable CTR %
