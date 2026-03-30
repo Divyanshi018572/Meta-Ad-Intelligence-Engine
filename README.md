@@ -3,7 +3,7 @@
 
 > **An end-to-end Meta Ad analytics platform analyzing 400K+ ad events across Facebook & Instagram — with funnel analysis, ROAS/ROI tracking, A/B testing, ML-powered conversion prediction, and a live Streamlit dashboard.**
 
-🌐 **Dataset:** [Social Media Advertisement Performance — Kaggle](https://www.kaggle.com/datasets/alperenmyung/social-media-advertisement-performance) &nbsp;|&nbsp; 👩‍💻 **Author:** [Divyanshi Singh — LinkedIn](https://www.linkedin.com/in/divyanshi018572) &nbsp;|&nbsp; 🚀 **Live Demo:** [Streamlit App](https://2eydel6rqdciyjzgjkcics.streamlit.app/)
+🌐 **Dataset:** [Social Media Advertisement Performance — Kaggle](https://www.kaggle.com/datasets/alperenmyung/social-media-advertisement-performance) &nbsp;|&nbsp; 👩‍💻 **Author:** [Divyanshi Singh — LinkedIn](https://www.linkedin.com/in/divyanshi018572) &nbsp;|&nbsp; 🚀 **Live Demo:** [Streamlit App](https://meta-ad-intelligence-engine-noknavfbsz7x9bjo7eh3ey.streamlit.app/)
 
 ---
 
